@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>留言板</title>
+  <!-- Import bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+</head>
+
+<body>
+  <div class="header container">
+    <div class="page-header">
+      <h1><a href="/">首頁</a></h1>
+    </div>
+  </div>
+  <div class="comments container">
+    <!--
+        submit 表單時需有 name 屬性
+        action 為 submit 後會跳轉的 url 地址
+     -->
+    <form action="/submit" method="get">
+      <div class="form-group">
+        <label for="input_name">姓名</label>
+        <input type="text" class="form-control" id="input_name" name="name" placeholder="請輸入姓名" required minlength="2" maxlength="10">
+      </div>
+      <div class="form-group">
+        <label for="textarea_message">留言</label>
+        <textarea class="form-control" id="textarea_message" name="message" placeholder="請輸入留言" cols="30" rows="10" required minlength="5" maxlength="20"></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+</body>
+
+</html>
