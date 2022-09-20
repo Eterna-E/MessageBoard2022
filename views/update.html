@@ -12,23 +12,28 @@
   <div class="header container">
     <div class="page-header">
       <h1><a href="/">首頁</a></h1>
+      <h2>修改留言</h2>
     </div>
   </div>
+  
   <div class="comments container">
     <!--
         submit 表單時需有 name 屬性
         action 為 submit 後會跳轉的 url 地址
      -->
-    <form action="/submit" method="get">
+    <form action="/submit-update" method="get">
       <div class="form-group">
         <label for="input_name">姓名</label>
-        <input type="text" class="form-control" id="input_name" name="name" placeholder="請輸入姓名" required  maxlength="100">
+        <!-- <p>{{ name }}</p> -->
+        <!-- {{ message }} -->
+        <input type="text" name="id" id="id" value="{{id}}" readonly="readonly">
+        <input type="text" class="form-control" id="input_name" value="{{ name }}" name="name"  required maxlength="100">
       </div>
       <div class="form-group">
         <label for="textarea_message">留言</label>
-        <textarea class="form-control" id="textarea_message" name="message" placeholder="請輸入留言" cols="30" rows="10" required maxlength="20"></textarea>
+        <textarea class="form-control" id="textarea_message" value="{{ message }}" name="message"  cols="30" rows="10" required  maxlength="100">{{ message }}</textarea>
       </div>
-      <button type="submit" class="btn btn-primary">Submit</button>
+      <button type="submit" class="btn btn-primary">Update</button>
     </form>
   </div>
 </body>

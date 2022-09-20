@@ -1,3 +1,7 @@
 .pull-right {
     float: right;
 }
+.flex-container {
+    display: flex;
+    flex-direction: row;
+}
